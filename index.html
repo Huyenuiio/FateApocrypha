@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">	
+    <title>Fate/Apocrypha</title>
+    <link rel="icon" href="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98035-rdkjeqUUsG2j.jpg" type="jpg">
+    <style>
+    * {
+        margin: 0; padding: 0;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        font-weight: normal;
+        font-family: 'Quicksand', sans-serif;
+
+    }
+body {
+    background: #0f0f0f;
+    font-family: 'Quicksand', sans-serif;
+}
+.heading {
+    color: #728197;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;  
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+
+}
+.container .main-video {
+    background: #1a1a1a;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.container .main-video video {
+    width: 100%;
+    border-radius: 5px;
+}
+.container .main-video  .title {
+    background: rgb(33 33 33);
+    color: rgb(255, 250, 250);
+    font-size: 23px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.container .video-list {
+    background: rgb(33 33 33);
+    border-radius: 5px;
+    height: 520px;
+    overflow-y: scroll;
+
+}
+
+.container .video-list::-webkit-scrollbar {
+    width: 7px;
+}
+.container .video-list::-webkit-scrollbar-track {
+    background: #ccc;
+    border-radius: 50px; 
+}
+.container .video-list::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 50px; 
+}
+
+
+
+.container .video-list .vid video {
+    width: 100px;
+    border-radius: 5px;
+
+}
+
+.container .video-list .vid {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0,0,0,.1);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    cursor: pointer;
+}
+.container .video-list .vid:hover{
+    background: rgb(39 39 39);
+}
+
+
+
+.container .video-list .vid.active{
+    background: rgb(26 35 49);
+
+}
+.container .video-list .vid.active .title{
+   color: #fff;
+}
+.container .video-list .vid .title{
+   color: hsla(0,0%,100%,.5);
+   font-size: 17px;
+}
+@media (max-width:991px){   
+    .container {
+    grid-template-columns: 1.5fr 1fr;
+    padding: 10px;
+}
+}
+@media (max-width:768px){
+    .container {
+    grid-template-columns: 1fr;
+}
+}
+#myVideo {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+button {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555555; 
+  color: white;
+}
+
+#timeline {
+    display: none; /* Hide timeline */
+}
+
+/* ------------------------------------------------hieu-ung-chuyen-dong-luot-len-luot-xuong---------------------------------------------------------------------- */
+
+.container, .video-list, .heading {
+    /* Thời gian chuyển đổi */
+    transition: all 0.5s ease-in-out;
+}
+
+.container:hover, .video-list:hover, .heading:hover {
+    /* Hiệu ứng lướt lên */
+    transform: translateY(-10px);
+}
+
+.container:active, .video-list:active, .heading:active {
+    /* Hiệu ứng lướt xuống */
+    transform: translateY(10px);
+}
+/* _____________________________________________________________________________________________________________________________ */
+
+    </style>
+</head>
+<body>
+    <h3 class="heading">Fate/Apocrypha</h3>
+    <div class="container">
+        <div class="main-video">
+            <div class="video">
+                <video id="myVideo"  controls muted autoplay playsinline src="https://content.jwplatform.com/videos/xWPiqtCU-1920.mp4">
+                    <source src="
+                    " size="720">
+                        <source src=""
+                    size="1080">
+                </video>
+<input id="timeline" type="range" min="0" max="100" value="0">
+                <div class="title">Tập 1 - Apocrypha: Cuộc Thánh chiến Vĩ đại</div>
+            </div>
+        </div>
+
+    <!-- phan list video -->
+    <div class="video-list">
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/xWPiqtCU-1920.mp4" poster="https://s199.imacdn.com/vg/2017/07/03/396eefe807b025d4_16c50f62e0e9c1cd_10650314990519016118684.jpg"></video>
+            <h3 class="title">Tập 1 - Apocrypha: Cuộc Thánh chiến Vĩ đại</h3>
+            </div>
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/3COnCzxj-1920.mp4" poster="https://s199.imacdn.com/vg/2017/07/09/aa8f5a0a034857b3_a89357aa937e0dfb_23109149960989799674.jpg"></video>
+            <h3 class="title">Tập 2 - Thánh nữ khởi hành</h3>
+            </div>
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/LnQDYvTn-1920.mp4" poster="https://s199.imacdn.com/vg/2017/07/16/a66761b918a6622e_81dc221db1bfcd0b_24568150019920589674.jpg"></video>
+            <h3 class="title">Tập 3 - Arukidasu Unmei</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/3jbz0I5J-1920.mp4" poster="https://s199.imacdn.com/vg/2017/07/24/e29224e626a08af7_001a01d8b9237e64_2194015009017091118684.jpg"></video>
+            <h3 class="title">Tập 4 - Cái giá của sinh mệnh, chuộc lại từ cái chết.</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/GPmR6v8v-1920.mp4" poster="https://s199.imacdn.com/vg/2017/07/31/3532080832bcf111_8b05e814ae122ac4_2087015015051018118684.jpg"></video>
+            <h3 class="title">Tập 5 - Ý chí của Thiên đường</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/hv8QMOZZ-1920.mp4" poster="https://s199.imacdn.com/vg/2017/08/10/6cae428efc09171c_fb8550aab747192f_9670715023465299118684.jpg"></video>
+            <h3 class="title">Tập 6 - Hiệp sĩ nổi loạn</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/1QMX4UZj-1920.mp4" poster="https://s199.imacdn.com/vg/2017/08/15/11f1170d839ccf2d_236f972cbf0c3af7_9284115027326897118684.jpg"></video>
+            <h3 class="title">Tập 7 - Ý nghĩa của Tự do</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/E8JHGhrX-1920.mp4" poster="https://s199.imacdn.com/vg/2017/08/21/fe58acfde8fefe8f_79a6ad4f75d52eb2_9365615033209322118684.jpg"></video>
+            <h3 class="title">Tập 8 - Ngọn lửa chiến tranh</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/z5DaWQID-1920.mp4" poster="https://s199.imacdn.com/vg/2017/08/28/d97ba7874e3d641f_3d54ba7b85040573_10764315039379897118684.jpg"></video>
+            <h3 class="title">Tập 9 - Bách hỏa và bách hoa</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/V6vznyfN-1920.mp4" poster="https://s199.imacdn.com/vg/2017/09/07/9f8b366319d54a7b_eda8b64ddb0ce465_9463315047935043118684.jpg"></video>
+            <h3 class="title">Tập 10 - Rơi cùng hoa</h3>
+            </div> 
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/C0Q0apVw-1920.mp4" poster="https://s199.imacdn.com/vg/2017/09/11/9297ff8221bd02c9_0353f6943b41a9e8_10105815051327792118684.jpg"></video>
+            <h3 class="title">Tập 11 - Ánh sánh vĩnh cửu</h3>
+            </div> 
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/AnBQDlbF-1920.mp4" poster="https://s199.imacdn.com/vg/2017/09/18/6e6fa57221e6f180_5decc8c8dfc73155_8085315057451208118684.jpg"></video>
+            <h3 class="title">Tập 12 - Sự khải hoàn của thánh nhân</h3>
+            </div> 
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/MBXFVliT-1920.mp4" poster="https://s199.imacdn.com/vg/2017/10/03/07ae156cb6a0f1ed_b7dafb1d7b6c8fc4_1492315070389542118684.jpg"></video>
+            <h3 class="title">Tập 13 - Master cuối cùng</h3>
+            </div>
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/3EJMzguP-1920.mp4" poster="https://s199.imacdn.com/vg/2017/10/11/3dc3ffbdbf466002_50ee843c8983d378_1691915077036869118684.jpg"></video>
+            <h3 class="title">Tập 14 - Kẻ cầu nguyện vì cứu rỗi</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/E1a41GrF-1920.mp4" poster="https://s199.imacdn.com/vg/2017/10/17/a72bd4877127040c_8981527b3ab9483a_10683915082301343118684.jpg"></video>
+            <h3 class="title">Tập 15 - Những con đường khác nhau</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/ntOTxSZl-1920.mp4" poster="https://s199.imacdn.com/vg/2017/10/25/7e6e0d93a6ae16e8_adbba6d17177061a_1239715089310782118684.jpg"></video>
+            <h3 class="title">Tập 16 - Jack the Ripper</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/OFj97vcx-1920.mp4" poster="https://s199.imacdn.com/vg/2017/11/01/69a81645d72f3220_48b0b33807cfa98b_1379015095354112118684.jpg"></video>
+            <h3 class="title">Tập 17 - Traumerei</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/USLbVo8x-1920.mp4" poster="https://s199.imacdn.com/vg/2017/11/06/5d8dbcac1f1a8645_89fae8657bd8d309_1450015099760331118684.jpg"></video>
+            <h3 class="title">Tập 18 - Từ địa ngục</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/OjnGdVR0-1920.mp4" poster="https://s199.imacdn.com/vg/2017/11/13/22d17c7aa5a78ce5_306b841af452ac1c_2032015105820263118684.jpg"></video>
+            <h3 class="title">Tập 19 - Bình minh của sự kết thúc</h3>
+            </div>  
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/s1UrCNxY-1920.mp4" poster="https://s199.imacdn.com/vg/2017/12/09/3d75932dda511ff9_1bc4744ab12b3aec_10079015128132103118684.jpg"></video>
+            <h3 class="title">Tập 20 - Trên bầu trời</h3>
+            </div> 
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/Cd4C3HXX-1920.mp4" poster="https://s199.imacdn.com/vg/2017/12/09/28bd6e839d541833_7d352656a1e4fb68_8962915128135893118684.jpg"></video>
+            <h3 class="title">Tập 21 - Bọ Cạp Nhất Xạ</h3>
+            </div> 
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/6WPlA8qR-1920.mp4" poster="https://s199.imacdn.com/vg/2017/12/13/14f5da42f213b3f0_ec7c9da3e8889faa_9215115131662677118684.jpg"></video>
+            <h3 class="title">Tập 22 - Đoàn tụ và chia tay</h3>
+            </div> 
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/qZXaCvaB-1920.mp4" poster="https://s199.imacdn.com/vg/2017/12/21/8fd2ef2426b92348_92c1cc3151186b43_9760515138172564118684.jpg"></video>
+            <h3 class="title">Tập 23 - Xuống địa ngục</h3>
+            </div>
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/qQkHAP77-1920.mp4" poster="https://s199.imacdn.com/vg/2018/01/01/0a6a8868db92b60f_885ac957e68b0ead_10241315148170289118684.jpg"></video>
+            <h3 class="title">Tập 24 - Cuộc chiến chén thánh</h3>
+            </div>
+            <div class="vid">
+                <video src="https://content.jwplatform.com/videos/Sb058dfa-1920.mp4" poster="https://s199.imacdn.com/vg/2018/01/11/73bdb47a9bf09bd1_7ec9afc238c866fc_10742615156036689118684.jpg"></video>
+            <h3 class="title">Tập 25 -  Apocrypha</h3>
+            </div>
+    </div>
+    
+
+</div>
+
+
+<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+      <script>
+var vid = document.getElementById("myVideo");
+var playPauseBtn = document.getElementById("playPauseBtn");
+var timeline = document.getElementById("timeline");
+
+vid.ontimeupdate = function() {updateTimeline()};
+
+function playPauseVid() { 
+    if (vid.paused) {
+        vid.play();
+        playPauseBtn.innerHTML = "Pause";
+    } else {
+        vid.pause();
+        playPauseBtn.innerHTML = "Play";
+    }
+} 
+
+function increaseVol() {
+    if(vid.volume < 1) vid.volume += 0.1;
+}
+
+function decreaseVol() {
+    if(vid.volume > 0) vid.volume -= 0.1;
+}
+
+function toggleFullscreen() {
+    if (vid.requestFullscreen) {
+        vid.requestFullscreen();
+    } else if (vid.mozRequestFullScreen) { /* Firefox */
+        vid.mozRequestFullScreen();
+    } else if (vid.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        vid.webkitRequestFullscreen();
+    } else if (vid.msRequestFullscreen) { /* IE/Edge */
+        vid.msRequestFullscreen();
+    }
+}
+
+function updateTimeline() {
+    var value = (100 / vid.duration) * vid.currentTime;
+    timeline.value = value;
+}
+
+timeline.oninput = function() {
+    var currentTime = this.value * vid.duration / 100;
+    vid.currentTime = currentTime;
+}
+
+const player = new Plyr('#myVideo', {
+    quality: { default: '1080', options: ['1080', '720'] }
+});
+
+
+
+let listVideo = document.querySelectorAll('.video-list .vid');
+let mainVideo = document.querySelector('.main-video video');
+let title   = document.querySelector('.main-video .title')
+    
+listVideo.forEach(video =>{
+    video.onclick = () => {
+        listVideo.forEach(vid => vid.classList.remove('active'));
+        video.classList.add('active');
+        if(video.classList.contains('active')){
+            let src = video.children[0].getAttribute('src');
+            mainVideo.src = src;
+            let text = video.children[1].innerHTML;
+            title.innerHTML = text;
+        };
+    };
+}); 
+// -----------------------------------------------------su-kien-ghi-nho-video----------------------------------------------------------------------------------------------------
+
+
+
+// Khi một video được chọn
+document.querySelectorAll('.vid').forEach(function(vid) {
+    vid.addEventListener('click', function() {
+        // Lưu trữ URL video và tiêu đề vào localStorage
+        var videoUrl = this.querySelector('video').getAttribute('src');
+        var title = this.querySelector('.title').textContent;
+        localStorage.setItem('lastSelectedVideo', JSON.stringify({url: videoUrl, title: title}));
+    });
+});
+
+// Khi tải lại trang web
+window.addEventListener('DOMContentLoaded', function() {
+    var lastSelectedVideo = JSON.parse(localStorage.getItem('lastSelectedVideo'));
+    if (lastSelectedVideo) {
+        // Tìm video tương ứng và đặt nó thành video được chọn
+        document.querySelectorAll('.vid').forEach(function(vid) {
+            var videoUrl = vid.querySelector('video').getAttribute('src');
+            if (videoUrl === lastSelectedVideo.url) {
+                vid.classList.add('active');
+                // Cập nhật tiêu đề
+                document.querySelector('.title').textContent = lastSelectedVideo.title;
+                // Kích hoạt sự kiện click chuột
+                vid.click();
+            } else {
+                vid.classList.remove('active');
+            }
+        });
+    }
+});
+
+
+
+//--------------------------------------------------phan ghi nho thoi gian video-----------------------------------------------------------------------
+
+// Lấy tham chiếu đến video
+var video = document.getElementById('myVideo');
+
+// Khi video được tải, kiểm tra xem có thời điểm xem cuối cùng không
+video.addEventListener('loadedmetadata', function() {
+    var lastWatchedTime = localStorage.getItem('lastWatchedTime');
+    if (lastWatchedTime) {
+        video.currentTime = lastWatchedTime;
+    }
+});
+
+// Khi video bị tạm dừng (ví dụ: khi người xem đóng trang web)
+video.addEventListener('pause', function() {
+    localStorage.setItem('lastWatchedTime', video.currentTime);
+});
+//---------------------------------------------------------end----------------------- ---------------------------------------------------------
+
+
+    </script>
+</body>
+</html>
