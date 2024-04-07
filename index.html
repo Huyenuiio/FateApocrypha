@@ -27,6 +27,7 @@ body {
     font-size: 40px;
     text-align: center;
     padding: 10px;  
+    font-weight: 700;
 }
 
 .container {
@@ -53,6 +54,7 @@ body {
     font-size: 23px;
     padding-top: 15px;
     padding-bottom: 15px;
+    font-weight: 700;
 }
 .container .video-list {
     background: rgb(33 33 33);
@@ -105,6 +107,7 @@ body {
 }
 .container .video-list .vid.active .title{
    color: #fff;
+   font-weight: 700;
 }
 .container .video-list .vid .title{
    color: hsla(0,0%,100%,.5);
@@ -175,7 +178,7 @@ button:hover {
     <div class="container">
         <div class="main-video">
             <div class="video">
-                <video id="myVideo"  controls muted autoplay playsinline src="https://content.jwplatform.com/videos/xWPiqtCU-1920.mp4">
+                <video id="myVideo"  controls muted autoplay playsinline  poster="" src="https://content.jwplatform.com/videos/xWPiqtCU-1920.mp4">
                     <source src="
                     " size="720">
                         <source src=""
@@ -347,10 +350,10 @@ const player = new Plyr('#myVideo', {
 });
 
 
-
+// _____________________________________________Ham-danh-cho-cac-phim-co-poster-dep___________________________________________________________________________________________________________________________
 let listVideo = document.querySelectorAll('.video-list .vid');
 let mainVideo = document.querySelector('.main-video video');
-let title   = document.querySelector('.main-video .title')
+let title   = document.querySelector('.main-video .title');
     
 listVideo.forEach(video =>{
     video.onclick = () => {
@@ -358,12 +361,15 @@ listVideo.forEach(video =>{
         video.classList.add('active');
         if(video.classList.contains('active')){
             let src = video.children[0].getAttribute('src');
+            let poster = video.children[0].getAttribute('poster'); // Lấy đường dẫn poster
             mainVideo.src = src;
+            mainVideo.poster = poster; // Đặt thuộc tính poster của video chính
             let text = video.children[1].innerHTML;
             title.innerHTML = text;
         };
     };
-}); 
+});
+
 // -----------------------------------------------------su-kien-ghi-nho-video----------------------------------------------------------------------------------------------------
 
 
